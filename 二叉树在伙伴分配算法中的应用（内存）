@@ -1,0 +1,14 @@
+http://coolshell.cn/articles/10427.html#more-10427
+伙伴分配器的一个极简实现
+
+读后感：
+	1：完全二叉树根本就是一个2的幂次的结构，同一层level的权值相同。
+	2：而且偏移量等都非常精髓。每一层都可以推导出最后的offset.
+		对于满二叉树而言，因为每level的第一左子树的下标为2^level-1，所以如果我们得到[index]节点的所在level，那么offset的计算可以归结为(index-2^level+1) * node_size = (index+1)*node_size – node_size*2^level。其中size的计算为2^(max_depth-level)，所以node_size * 2^level = 2^max_depth = size。
+综上所述，可得公式offset=(index+1)*node_size – size。
+PS：式中索引的下标均从0开始，size为内存总大小，node_size为内存块对应大小。
+	3：合并以及分配都非常棒。
+		 if (left_longest + right_longest == node_size)
+     			 self->longest[index] = node_size;
+   		 else
+    			  self->longest[index] = MAX(left_longest, right_longest);
