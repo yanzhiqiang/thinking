@@ -1,0 +1,5 @@
+1:audio and video player
+2:some complex function to encode
+3:read english more
+4:network study and kernel study
+5:ios develop
