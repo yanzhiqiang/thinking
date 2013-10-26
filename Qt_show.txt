@@ -1,0 +1,4 @@
+1:Qt4中的QFrame控件与视频概念中的frame概念无丝毫关系。
+2:Qt4中可以借助另外一个插件QPhonon或者借助mplayer方式来间接的播放视频。
+	Qt中的控件还是Qlabel。
+3:Qt4 中的QMovie控件只能播放png，gif等图片，是否能借助控件播放视频目前不确定。
